@@ -1,0 +1,19 @@
+langgraph>=0.2.0
+anthropic>=0.40.0
+anthropic>=0.40.0
+pydantic>=2.0
+tenacity>=8.2.0
+pytest>=7.4.0
+
+# Included so the Docker image can run any provider (real-time or batch)
+# via LLM_PROVIDER / --provider without a rebuild. Comment out what you
+# don't need for a smaller local install.
+boto3>=1.34.0        # for llm/bedrock_provider.py and llm/batch/bedrock_batch.py
+openai>=1.40.0        # for llm/openrouter_provider.py
+
+# API service + Streamlit UI
+fastapi>=0.110.0
+uvicorn[standard]>=0.29.0
+httpx>=0.27.0        # webhook callback delivery (refcheck/api/runner.py)
+streamlit>=1.35.0
+requests>=2.31.0      # streamlit_app.py -> API calls
